@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research Opportunity Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><h1>University Research Opportunity Portal</h1></header>
+  <main>
+    <div id="message" class="message hidden"></div>
+
+    <section>
+      <div class="bar">
+        <h2>All Opportunities</h2>
+        <button id="newBtn">+ New Opportunity</button>
+      </div>
+      <table>
+        <thead>
+          <tr><th>ID</th><th>Title</th><th>Area</th><th>Faculty</th><th>Positions</th><th>Deadline</th><th>Status</th><th>Actions</th></tr>
+        </thead>
+        <tbody id="list"></tbody>
+      </table>
+    </section>
+
+    <section id="details" class="hidden">
+      <div class="bar"><h2>Opportunity Details</h2><button id="closeDetails" class="secondary">Hide</button></div>
+      <div id="detailsBody"></div>
+    </section>
+
+    <section id="formSection" class="hidden">
+      <h2 id="formTitle">Create Opportunity</h2>
+      <form id="form" novalidate>
+        <input type="hidden" id="oppId">
+        <label>Title <input id="title"></label>
+        <label>Description <textarea id="description" rows="3"></textarea></label>
+        <label>Research Area <input id="research_area"></label>
+        <label>Faculty Member's Name <input id="faculty_name"></label>
+        <label>Department <input id="department"></label>
+        <label>Required Skills <input id="required_skills"></label>
+        <label>Available Positions <input id="available_positions" type="number" min="0"></label>
+        <label>Application Deadline <input id="application_deadline" type="date"></label>
+        <label>Status
+          <select id="status"><option>Open</option><option>Closed</option></select>
+        </label>
+        <div class="row">
+          <button type="submit">Save</button>
+          <button type="button" id="cancelBtn" class="secondary">Cancel</button>
+        </div>
+      </form>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
